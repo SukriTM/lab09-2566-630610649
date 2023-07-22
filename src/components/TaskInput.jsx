@@ -14,7 +14,9 @@ export const TaskInput = ({ addTaskFunc }) => {
   };
 
   const taskInputOnKeyUp = (event) => {
-    if (event.key === "Enter" && taskInput !== "") addTaskBtnOnClick();
+    if (event.key === "Enter" && taskInput !== "") {
+      addTaskBtnOnClick();
+    }
   };
 
   return (
@@ -26,7 +28,11 @@ export const TaskInput = ({ addTaskFunc }) => {
         onKeyUp={taskInputOnKeyUp}
         value={taskInput}
       />
-      <button className="btn btn-primary" onClick={addTaskBtnOnClick}>
+      <button
+        className="btn btn-primary"
+        onClick={addTaskBtnOnClick}
+        disabled={!taskInput}
+      >
         Add
       </button>
     </div>
